@@ -4,12 +4,13 @@
     </head>
   <body>
     <h1>Message Board</h1>
-    <div class="message">
+    <div class="messages">
         <% messages.forEach((message) => { %>
            <%-  include('message', {message, message});%> 
         <%  }) %>
+        <button onClick="window.location.href='./newMessage'"> Add New Message </button>
     </div>
 
-    <button onClick="window.location.href='./newMessage'"> Add New Message </button>
+    
   </body>
 </html>

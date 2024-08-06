@@ -4,21 +4,34 @@ h1 {
     color: rgb(246, 166, 179);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+a {
+    text-decoration: none;
+}
 
-.messages{
+.messages {
     display: flex;
     flex-direction: column;
-    background-color: pink;
+    background-color: white;
 }
 
 .message {
     flex: 1;
     border: 2px solid pink;
     padding: 5px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 5px;
     background-color: rgb(255, 150, 167);
     color: white;
+}
+
+.messages button{
+    margin-top: 20px;
+    width: 30%;
+    
+}
+
+.messageDetail-button {
+    margin-left: 10px;
 }
 
 .message .author {

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/index.css" type="text/css">
+    </head>
+  <body>
+    <h1>Message Detail</h1>
+    <div class="message">
+        <p class="author">@ <%= message.user %>: 
+            <span class="text"><%= message.text %> </span>
+        </p>
+        <p class="date">Date: <%= message.date %></p>
+    
+    </div>
+
+    <button class="messageDetail-button" onClick="window.location.href='/'"> Back </button>
+  </body>
+</html>

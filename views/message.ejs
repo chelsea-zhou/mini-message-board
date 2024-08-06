@@ -1,6 +1,8 @@
-<div class="message">
-    <p class="author">@ <%= message.user %>: 
-        <span class="text"><%= message.text %> </span>
-    </p>
-    <p class="date">Date: <%= message.date %></p>
-</div>
+<a href="/messageDetail/<%= message.id %>" >
+    <div class="message">
+        <p class="author">@ <%= message.user %>: 
+            <span class="text"><%= message.text %> </span>
+        </p>
+        <p class="date">Date: <%= message.date %></p>
+    </div>
+</a>
