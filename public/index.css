@@ -1,0 +1,88 @@
+
+h1 {
+    text-align: center;
+    color: rgb(246, 166, 179);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+}
+
+.message {
+    flex: 1;
+    border: 2px solid pink;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 150, 167);
+    color: white;
+}
+
+.message .author {
+
+}
+.message .text {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.message .date {
+    font-weight: light;
+    font-size:x-small;
+}
+
+button {
+    background-color: pink;
+    color: red;
+    border: white;
+}
+
+.newMessage {
+    font-family: Arial, sans-serif;
+    background-color: #fbe4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    color:rgb(241, 141, 157);
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(243, 165, 178);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(241, 141, 157);
+}

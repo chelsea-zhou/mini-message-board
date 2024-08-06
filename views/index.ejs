@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/index.css" type="text/css">
+    </head>
+  <body>
+    <h1>Message Board</h1>
+    <div class="message">
+        <% messages.forEach((message) => { %>
+           <%-  include('message', {message, message});%> 
+        <%  }) %>
+    </div>
+
+    <button onClick="window.location.href='./newMessage'"> Add New Message </button>
+  </body>
+</html>
