@@ -4,11 +4,15 @@
     </head>
   <body>
     <h1>Message Board</h1>
+    <a href="/sign-up">sign up</a>
+    <a href="/login">login</a>
     <div class="messages">
         <% messages.forEach((message) => { %>
-           <%-  include('message', {message, message});%> 
+           <%-  include('message', {message: message, user: user});%> 
         <%  }) %>
-        <button onClick="window.location.href='./newMessage'"> Add New Message </button>
+        <% if (user) { %>
+          <button onClick="window.location.href='./newMessage'"> Add New Message </button>
+        <%}%>
     </div>
 
     
