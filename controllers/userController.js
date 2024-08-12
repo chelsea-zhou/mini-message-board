@@ -1,10 +1,12 @@
 const db = require("../db/queries");
+const bcrypt = require("bcrypt");
 
 async function createUser(req, res) {
     const body = req.body;
+    const hashedPw = await bcrypt.hash(body.password, 10);
     const createReq = {
         username: body.username,
-        password: body.password
+        password: hashedPw
     }
     console.log(`usename is ${JSON.stringify(createReq)}`);
     await db.createUser(createReq);
