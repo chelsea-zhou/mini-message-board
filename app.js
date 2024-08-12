@@ -46,23 +46,6 @@ try {
     }
 });
 
-let counter = 0;
-
-const messages = [
-    {
-      text: "Hi there!",
-      user: "Amando",
-      date: new Date(),
-      id: 1
-    },
-    {
-      text: "Hello World!",
-      user: "Charles",
-      date: new Date(),
-      id: 2
-    }
-  ];
-
 app.get('/sign-up', (req, res)=> {
     res.render('signup');
 });
@@ -93,14 +76,7 @@ app.get('/newMessage', (req, res) => {
 
 app.post('/newMessage', messageController.createNewMessage);
 
-app.get('/messageDetail/:id', (req, res) => {
-    const id = req.params.id;
-    const filteredMessages = messages.filter((message) => message.id == id);
-    if (filteredMessages.length >0) {
-        res.render("messageDetail", {message: filteredMessages[0]});
-    }
-});
-
+app.get('/messageDetail/:id', messageController.getMessage);
 
 app.listen(8000)
 

@@ -34,11 +34,26 @@ async function getMessages(req) {
 
 async function getMessagesWithAuthor() {
     const sql = `
-    SELECT messages.*, users.id, users.username
+    SELECT messages.*, 
+        users.username,
+        users.id AS user_id
     FROM messages
     JOIN users ON messages.user_id = users.id;`
     const {rows} = await pool.query(sql);
     return rows;
+}
+
+async function getMessage(req) {
+    const sql = `
+    SELECT messages.*, 
+        users.username,
+        users.id AS user_id
+    FROM messages
+    JOIN users ON messages.user_id = users.id
+    WHERE messages.id = $1;
+    `
+    const {rows} = await pool.query(sql, [req.id]);
+    return rows[0];
 }
 
 async function updateUserStatus(user) {
@@ -54,5 +69,6 @@ module.exports = {
     updateUserStatus,
     createNewMessage,
     getMessages,
+    getMessage,
     getMessagesWithAuthor
 }

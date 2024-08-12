@@ -21,9 +21,18 @@ async function getMessages(req, res) {
     } else {
         messages = await db.getMessages(req);
     }
+    console.log(`messages: ${JSON.stringify(messages)}`);
     res.render('index', {messages, user: req.user});
+}
+
+async function getMessage(req, res) {
+    const id = req.params.id;
+    const message = await db.getMessage({id});
+    console.log(`message is ${JSON.stringify(message)}`);
+    res.render('messageDetail', {message, user: req.user})
 }
 module.exports = {
     createNewMessage,
-    getMessages
+    getMessages,
+    getMessage
 }
